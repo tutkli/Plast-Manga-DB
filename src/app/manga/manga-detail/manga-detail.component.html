@@ -1,0 +1,41 @@
+<div class="detail-container">
+  <mat-card *ngIf="manga; else placeholder" fxFlex fxLayout="column" fxLayoutGap="1rem" class="detail-content">
+
+    <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="1rem">
+      <div class="primary-title">{{ manga?.title }}</div>
+      <div class="status" fxLayoutAlign="center center"
+           [ngClass]="manga?.status?.toLowerCase()">{{ ('manga.status.' + manga?.status?.toLowerCase()) | translate }}</div>
+    </div>
+
+
+    <div fxLayout="row" fxLayoutGap="1rem">
+      <img [src]="manga?.image" class="manga-image">
+
+      <div fxFlex fxLayout="column" fxLayoutGap="1rem">
+        <div  fxLayout="row" fxLayoutGap="3rem" class="manga-info">
+          <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap=".5rem">
+            <div>{{ 'manga.rank' | translate }}</div>
+            <div class="primary-title">#{{ manga?.rank }}</div>
+          </div>
+          <div class="vertical-divider">&nbsp;</div>
+          <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap=".5rem">
+            <div>{{ 'manga.score' | translate }}</div>
+            <div class="primary-title">{{ manga?.score }}</div>
+          </div>
+          <div class="vertical-divider">&nbsp;</div>
+          <div *ngIf="manga?.chapters" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap=".5rem">
+            <div>{{ 'manga.chapters' | translate }}</div>
+            <div class="primary-title">{{ manga?.chapters }}</div>
+          </div>
+        </div>
+
+        <div>{{ manga?.synopsis }}</div>
+      </div>
+
+    </div>
+  </mat-card>
+</div>
+
+<ng-template #placeholder>
+  <app-manga-detail-placeholder></app-manga-detail-placeholder>
+</ng-template>

@@ -1,0 +1,26 @@
+<div class="search-engine-wrapper mat-elevation-z1" fxLayoutAlign="center center">
+  <mat-form-field floatLabel="never" class="search-engine">
+    <input #searchEngineInput
+           matAutocomplete matInput
+           [formControl]="searchTextCtrl"
+           [value]="searchTextCtrl.value"
+           [matAutocomplete]="autocomplete"
+           [placeholder]="'webComponents.search-engine.placeholder' | translate">
+    <mat-icon *ngIf="searchEngineInput?.value" class="cursor-pointer" (click)="clearInput(searchEngineInput)"  matSuffix>close</mat-icon>
+    <mat-icon matSuffix>search</mat-icon>
+  </mat-form-field>
+
+  <mat-autocomplete #autocomplete>
+    <ng-container *ngFor="let item of filteredItems;let index=index">
+      <mat-option *ngIf="index < 10" [value]="item.title" class="search-engine-option" (onSelectionChange)="openDetail(item)">
+        <div fxFlex fxLayout="row" fxLayoutGap="1rem">
+          <img [src]="item?.image" class="image-display" alt="manga image">
+          <div fxFlex fxLayout="column" fxLayoutAlign="center start">
+            <div class="primary-display">{{ item.title }}</div>
+            <div class="secondary-display">{{ 'manga.score' | translate }}: {{ item.score }}</div>
+          </div>
+        </div>
+      </mat-option>
+    </ng-container>
+  </mat-autocomplete>
+</div>

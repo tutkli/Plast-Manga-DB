@@ -1,0 +1,40 @@
+<div class="list-container"
+     infiniteScroll
+     [scrollWindow]="false"
+     [infiniteScrollDistance]="2"
+     [infiniteScrollThrottle]="500"
+     (scrolled)="onScroll()">
+  <mat-table [dataSource]="mangaDataSource" *ngIf="mangas?.length > 0">
+
+    <ng-container [matColumnDef]="mangaColumns.IMAGE">
+      <mat-header-cell fxFlex="10rem" *matHeaderCellDef></mat-header-cell>
+      <mat-cell fxFlex="10rem" *matCellDef="let manga">
+        <img [src]="manga.image" class="manga-image" alt="manga image">
+      </mat-cell>
+    </ng-container>
+
+    <ng-container [matColumnDef]="mangaColumns.RANK">
+      <mat-header-cell fxFlex="10rem" *matHeaderCellDef>{{ 'manga.rank' | translate }}</mat-header-cell>
+      <mat-cell fxFlex="10rem" *matCellDef="let manga">
+        <div>#{{ manga.rank }}</div>
+      </mat-cell>
+    </ng-container>
+
+    <ng-container [matColumnDef]="mangaColumns.SCORE">
+      <mat-header-cell fxFlex="10rem" *matHeaderCellDef>{{ 'manga.score' | translate }}</mat-header-cell>
+      <mat-cell fxFlex="10rem" *matCellDef="let manga">
+        <div>{{ manga.score }}</div>
+      </mat-cell>
+    </ng-container>
+
+    <ng-container [matColumnDef]="mangaColumns.TITLE">
+      <mat-header-cell *matHeaderCellDef>{{ 'manga.title' | translate }}</mat-header-cell>
+      <mat-cell *matCellDef="let manga">
+        <div>{{ manga.title }}</div>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns; sticky: true" class="header mat-elevation-z2"></mat-header-row>
+    <mat-row *matRowDef="let manga; columns: displayedColumns;" class="row" matRipple (click)="openDetail(manga)"></mat-row>
+  </mat-table>
+</div>

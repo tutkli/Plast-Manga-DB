@@ -1,0 +1,13 @@
+<mat-toolbar color="primary" fxLayout="row">
+  <div fxLayout="row" fxLayoutGap="3rem" class="app-nav">
+    <div class="cursor-pointer" (click)="goToHome()">
+      {{ 'app.title' | translate }}
+    </div>
+    <button mat-raised-button (click)="goToMangaList()">Ver Mangas</button>
+  </div>
+
+  <div class="searcher" [class.home-active]="(homeActive | async)">
+    <app-search-engine></app-search-engine>
+  </div>
+  <app-language-selector></app-language-selector>
+</mat-toolbar>

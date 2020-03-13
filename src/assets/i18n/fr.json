@@ -1,0 +1,26 @@
+{
+  "app": {
+    "title": "Plast Manga DB"
+  },
+  "languages": {
+    "es": "Espagnol",
+    "fr": "Français"
+  },
+  "home": {
+    "top-mangas": "Top 5 Mangas"
+  },
+  "manga": {
+    "score": "Score",
+    "status": {
+      "finished": "Terminé",
+      "publishing": "Se faire publier"
+    },
+    "rank": "Popularité",
+    "chapters": "Chapitres"
+  },
+  "webComponents": {
+    "search-engine": {
+      "placeholder": "Chercher manga..."
+    }
+  }
+}

@@ -1,0 +1,26 @@
+.language-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  background-size: 2.5rem;
+  border: solid 2px white;
+  border-radius: 50%;
+  &.es {
+    background-image: url('src/assets/images/languages/es.png') !important;
+  }
+  &.fr {
+    background-image: url('src/assets/images/languages/fr.png') !important;
+  }
+}
+
+.menu-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-size: 1.5rem;
+  border-radius: 50%;
+  &.es {
+    background-image: url('src/assets/images/languages/es.png') !important;
+  }
+  &.fr {
+    background-image: url('src/assets/images/languages/fr.png') !important;
+  }
+}

@@ -1,5 +1,27 @@
 {
   "app": {
-    "title": "Fake my anime list"
+    "title": "Plast Manga DB"
+  },
+  "languages": {
+    "es": "Español",
+    "fr": "Francés"
+  },
+  "home": {
+    "top-mangas": "Top 5 Mangas"
+  },
+  "manga": {
+    "title": "Título",
+    "score": "Puntuación",
+    "status": {
+      "finished": "Finalizado",
+      "publishing": "Publicándose"
+    },
+    "rank": "Popularidad",
+    "chapters": "Capítulos"
+  },
+  "webComponents": {
+    "search-engine": {
+      "placeholder": "Buscar manga..."
+    }
   }
 }

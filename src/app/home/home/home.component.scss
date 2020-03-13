@@ -1,0 +1,43 @@
+:host {
+  height: 100%;
+}
+
+.home-container {
+    padding: 5rem;
+}
+
+.manga-card {
+  height: fit-content;
+  .manga-image {
+    width: 225px;
+    height: 350px;
+    border-radius: 5px;
+  }
+  .manga-overlay {
+    opacity: 0;
+    background-color: #383838;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    transition: all .5s ease;
+    padding: 1rem;
+  }
+  &:hover .manga-overlay {
+    opacity: 80%;
+  }
+}
+
+.manga-title {
+  font-size: 2rem;
+  font-weight: 500;
+  color: white;
+}
+
+.top-mangas {
+  margin-top: 5rem;
+}
+
