@@ -1,11 +1,11 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { MangaService } from '../../core/services/manga/manga.service';
-import { Manga } from '../../core/models/manga/manga.model';
-import { TableDataSource } from '../../core/models/table/table-data-source';
-import { MangaColumns } from '../../core/models/manga/mangaColumns';
-import { Router } from '@angular/router';
-import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {MangaService} from '../../core/services/manga/manga.service';
+import {Manga} from '../../core/models/manga/manga.model';
+import {TableDataSource} from '../../core/models/table/table-data-source';
+import {MangaColumns} from '../../core/models/manga/mangaColumns';
+import {Router} from '@angular/router';
+import {Subject} from 'rxjs';
+import {takeUntil} from 'rxjs/operators';
 
 @Component({
   selector: 'app-manga-list',

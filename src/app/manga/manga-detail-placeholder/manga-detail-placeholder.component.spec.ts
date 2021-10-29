@@ -1,25 +1,26 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed, waitForAsync} from '@angular/core/testing';
+import {MangaDetailPlaceholderComponent} from './manga-detail-placeholder.component';
 
-import { MangaDetailPlaceholderComponent } from './manga-detail-placeholder.component';
-
-describe('MangaDetailPlaceholderComponent', () => {
+describe('MangaDetailPlaceholderComponent', (): void => {
   let component: MangaDetailPlaceholderComponent;
   let fixture: ComponentFixture<MangaDetailPlaceholderComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync((): void => {
+    TestBed.overrideTemplate(MangaDetailPlaceholderComponent, '');
     TestBed.configureTestingModule({
-      declarations: [ MangaDetailPlaceholderComponent ]
+      declarations: [ MangaDetailPlaceholderComponent ],
+      providers: [],
     })
     .compileComponents();
   }));
 
-  beforeEach(() => {
+  beforeEach((): void => {
     fixture = TestBed.createComponent(MangaDetailPlaceholderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create', (): void => {
     expect(component).toBeTruthy();
   });
 });

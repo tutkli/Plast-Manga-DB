@@ -1,25 +1,30 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed, waitForAsync} from '@angular/core/testing';
+import {LanguageSelectorComponent} from './language-selector.component';
+import {provideSpy} from '../../../../../tests/utils';
+import {TranslateService} from '@ngx-translate/core';
 
-import { LanguageSelectorComponent } from './language-selector.component';
-
-describe('LanguageSelectorComponent', () => {
+describe('LanguageSelectorComponent', (): void => {
   let component: LanguageSelectorComponent;
   let fixture: ComponentFixture<LanguageSelectorComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync((): void => {
+    TestBed.overrideTemplate(LanguageSelectorComponent, '');
     TestBed.configureTestingModule({
-      declarations: [ LanguageSelectorComponent ]
+      declarations: [ LanguageSelectorComponent ],
+      providers: [
+        provideSpy(TranslateService),
+      ]
     })
     .compileComponents();
   }));
 
-  beforeEach(() => {
+  beforeEach((): void => {
     fixture = TestBed.createComponent(LanguageSelectorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create', (): void => {
     expect(component).toBeTruthy();
   });
 });

@@ -27,8 +27,8 @@ export class MangaDetailComponent implements OnInit, OnDestroy {
           this.activatedRoute.url
             .pipe(first())
             .subscribe((urlSegment: UrlSegment[]) => {
-            this.mangaService.selectManga(parseInt(urlSegment[0].path, 10));
-          });
+              this.mangaService.selectManga(parseInt(urlSegment[0].path, 10));
+            });
         }
     });
   }

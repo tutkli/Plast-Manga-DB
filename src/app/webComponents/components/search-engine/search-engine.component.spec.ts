@@ -1,25 +1,32 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed, waitForAsync} from '@angular/core/testing';
+import {SearchEngineComponent} from './search-engine.component';
+import {provideSpy} from '../../../../../tests/utils';
+import {MangaService} from '../../../core/services/manga/manga.service';
+import {Router} from '@angular/router';
 
-import { SearchEngineComponent } from './search-engine.component';
-
-describe('SearchEngineComponent', () => {
+describe('SearchEngineComponent', (): void => {
   let component: SearchEngineComponent;
   let fixture: ComponentFixture<SearchEngineComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync((): void => {
+    TestBed.overrideTemplate(SearchEngineComponent, '');
     TestBed.configureTestingModule({
-      declarations: [ SearchEngineComponent ]
+      declarations: [ SearchEngineComponent ],
+      providers: [
+        provideSpy(MangaService),
+        provideSpy(Router),
+      ]
     })
     .compileComponents();
   }));
 
-  beforeEach(() => {
+  beforeEach((): void => {
     fixture = TestBed.createComponent(SearchEngineComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create', (): void => {
     expect(component).toBeTruthy();
   });
 });

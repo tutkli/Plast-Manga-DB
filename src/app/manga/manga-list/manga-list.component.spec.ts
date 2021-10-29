@@ -1,25 +1,32 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed, waitForAsync} from '@angular/core/testing';
+import {MangaListComponent} from './manga-list.component';
+import {provideSpy} from '../../../../tests/utils';
+import {MangaService} from '../../core/services/manga/manga.service';
+import {Router} from '@angular/router';
 
-import { MangaListComponent } from './manga-list.component';
-
-describe('MangaListComponent', () => {
+describe('MangaListComponent', (): void => {
   let component: MangaListComponent;
   let fixture: ComponentFixture<MangaListComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync((): void => {
+    TestBed.overrideTemplate(MangaListComponent, '');
     TestBed.configureTestingModule({
-      declarations: [ MangaListComponent ]
+      declarations: [ MangaListComponent ],
+      providers: [
+        provideSpy(MangaService),
+        provideSpy(Router),
+      ]
     })
     .compileComponents();
   }));
 
-  beforeEach(() => {
+  beforeEach((): void => {
     fixture = TestBed.createComponent(MangaListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create', (): void => {
     expect(component).toBeTruthy();
   });
 });

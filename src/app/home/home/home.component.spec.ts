@@ -1,25 +1,34 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed, waitForAsync} from '@angular/core/testing';
+import {HomeComponent} from './home.component';
+import {provideSpy} from '../../../../tests/utils';
+import {MangaService} from '../../core/services/manga/manga.service';
+import {NavBarService} from '../../core/services/nav-bar/nav-bar.service';
+import {Router} from '@angular/router';
 
-import { HomeComponent } from './home.component';
-
-describe('HomeComponent', () => {
+describe('HomeComponent', (): void => {
   let component: HomeComponent;
   let fixture: ComponentFixture<HomeComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync((): void => {
+    TestBed.overrideTemplate(HomeComponent, '');
     TestBed.configureTestingModule({
-      declarations: [ HomeComponent ]
+      declarations: [ HomeComponent ],
+      providers: [
+        provideSpy(MangaService),
+        provideSpy(NavBarService),
+        provideSpy(Router),
+      ],
     })
     .compileComponents();
   }));
 
-  beforeEach(() => {
+  beforeEach((): void => {
     fixture = TestBed.createComponent(HomeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create', (): void => {
     expect(component).toBeTruthy();
   });
 });
