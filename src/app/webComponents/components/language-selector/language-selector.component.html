@@ -1,0 +1,15 @@
+<div class="language-icon cursor-pointer"
+     [style.background-image]="'url(../assets/images/languages/' + currentLang + '.png)'"
+     #menuTrigger="matMenuTrigger"
+     [matMenuTriggerFor]="menu"
+     (click)="menuTrigger.openMenu()"></div>
+
+<mat-menu #menu>
+  <mat-option *ngFor="let lang of availableLangs" (click)="updateLang(lang)">
+    <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap=".5rem">
+      <div class="menu-icon"
+           [style.background-image]="'url(../assets/images/languages/' + lang + '.png)'"></div>
+      <div>{{ ('languages.' + lang) | translate }}</div>
+    </div>
+  </mat-option>
+</mat-menu>

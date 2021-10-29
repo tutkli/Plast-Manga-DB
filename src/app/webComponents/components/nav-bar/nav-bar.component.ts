@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { NavBarService } from '../../core/services/nav-bar/nav-bar.service';
-import { Observable } from 'rxjs';
-import { Router } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {Observable} from 'rxjs';
+import {Router} from '@angular/router';
+import {NavBarService} from '../../../core/services/nav-bar/nav-bar.service';
 
 @Component({
   selector: 'app-nav-bar',

@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
-import { debounceTime, filter } from 'rxjs/operators';
-import { Manga } from '../../core/models/manga/manga.model';
-import { MangaService } from '../../core/services/manga/manga.service';
-import { Router } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {FormControl} from '@angular/forms';
+import {debounceTime, filter} from 'rxjs/operators';
+import {Router} from '@angular/router';
+import {Manga} from '../../../core/models/manga/manga.model';
+import {MangaService} from '../../../core/services/manga/manga.service';
 
 @Component({
   selector: 'app-search-engine',

@@ -1,9 +1,9 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { MangaService } from '../../core/services/manga/manga.service';
-import { Manga } from '../../core/models/manga/manga.model';
-import { ActivatedRoute, UrlSegment } from '@angular/router';
-import { first, takeUntil } from 'rxjs/operators';
-import { Subject } from 'rxjs';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {MangaService} from '../../core/services/manga/manga.service';
+import {Manga} from '../../core/models/manga/manga.model';
+import {ActivatedRoute, UrlSegment} from '@angular/router';
+import {first, takeUntil} from 'rxjs/operators';
+import {Subject} from 'rxjs';
 
 @Component({
   selector: 'app-manga-detail',

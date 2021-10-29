@@ -1,9 +1,9 @@
-import { RouterModule, Routes } from '@angular/router';
-import { NgModule } from '@angular/core';
-import { MangaDetailComponent } from './manga-detail/manga-detail.component';
-import { MangaListComponent } from './manga-list/manga-list.component';
-import { MangaRoutes } from './mangaRoutes';
-import { RouterOutletComponent } from '../webComponents/router-outlet/router-outlet.component';
+import {RouterModule, Routes} from '@angular/router';
+import {NgModule} from '@angular/core';
+import {MangaDetailComponent} from './manga-detail/manga-detail.component';
+import {MangaListComponent} from './manga-list/manga-list.component';
+import {MangaRoutes} from './mangaRoutes';
+import {RouterOutletComponent} from '../webComponents/components/router-outlet/router-outlet.component';
 
 const routes: Routes = [
   { path: `${MangaRoutes.MANGA}`,
