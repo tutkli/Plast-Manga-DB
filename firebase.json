@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "plast-manga-db",
     "public": "dist/my-anime-list",
     "rewrites": [ {
       "source": "**",
